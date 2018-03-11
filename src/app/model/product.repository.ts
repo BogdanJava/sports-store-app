@@ -29,7 +29,7 @@ export class ProductRepository {
     }
 
     saveProduct(product: Product) {
-        if (product.id != null || product.id == 0) {
+        if (product.id == null || product.id == 0) {
             this.dataSource.saveProduct(product)
                 .subscribe(p => this.products.push(p));
         } else {
